@@ -15,7 +15,7 @@ Platform
 Cookbooks
 ---------
 
-* python
+* python (removed from bsd fork)
 
 Attributes
 ==========

@@ -24,7 +24,7 @@ execute "easy_install pip" do
 end
 
 execute "pip install gunicorn" do
-    not_if "text -x /usr/bin/gunicorn"
+    not_if "test -x /usr/bin/gunicorn"
     action :run
 end
 

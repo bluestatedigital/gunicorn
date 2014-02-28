@@ -19,15 +19,8 @@
 # limitations under the License.
 
 action :install do
-  python_virtualenv new_resource.virtualenv do
-    action :create
-  end if new_resource.virtualenv
-
   execute "pip install gunicorn" do
     not_if "text -x /usr/bin/gunicorn" 
-    virtualenv new_resource.virtualenv
     action :install
   end
-
-  new_resource.updated_by_last_action(true)
 end

@@ -24,5 +24,5 @@ execute "easy_install pip" do
 end
 
 gunicorn_install "gunicorn" do
-  virtualenv node['gunicorn']['virtualenv']
+  
 end

@@ -18,6 +18,11 @@
 # limitations under the License.
 #
 
+execute "easy_install pip" do
+    #not_if "test -x /usr/bin/supervisord"
+    action :run
+end
+
 gunicorn_install "gunicorn" do
   virtualenv node['gunicorn']['virtualenv']
 end

@@ -23,7 +23,8 @@ action :install do
     action :create
   end if new_resource.virtualenv
 
-  python_pip "gunicorn" do
+  execute "pip install gunicorn" do
+    not if "text -x /usr/bin/gunicorn" 
     virtualenv new_resource.virtualenv
     action :install
   end

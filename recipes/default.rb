@@ -19,7 +19,7 @@
 #
 
 execute "easy_install pip" do
-    #not_if "test -x /usr/bin/supervisord"
+    not_if "test -x /usr/bin/pip"
     action :run
 end
 
